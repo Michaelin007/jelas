@@ -78,7 +78,10 @@ public class AskD implements Serializable {
         }
         return null;
     }*/
-       Connection conn=null;
+       InitialContext ctx = new InitialContext();
+DataSource ds = (DataSource)ctx.lookup(“{askclinical}“);
+Connection conn = ds.getConnection();
+     
 
                   try {
                       conn =(Connection) DriverManager.getConnection(CONN_STRING,USERNAME,PASSWORD);

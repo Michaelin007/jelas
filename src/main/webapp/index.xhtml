@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <link rel="icon" type="image/x-icon" href="bloglogo.ico"/>
+        <h:outputScript library="js" name="dietj.js"/>
+       <h:outputStylesheet library="css" name="diet.css" /> 
+        <title> Ask Nutritionist/Dietitian </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script>
+   
+        </script>
+    </h:head>
+    <h:body>
+        
+         <header></header>
+             <div id="hh">
+             <div id="nav">
+              <!--h:graphicImage url="/resources/images/ASN_logo2.png" id="logo"/-->
+              
+              <nav id="navbar"  class="navbar">
+                  <!--span class="nav-toggle" id="js-navbar-toggle">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">  
+                     <i  class="fa fa-bars"></i>
+                    </a>
+                  </span-->
+                  <div id="mobil">
+                  <a href="index.xhtml"><h:graphicImage url="/resources/images/bloglogo.png" id="logo"/></a>
+                  <a href="#main"><h:graphicImage url="/resources/images/ask2.jpg" id="ask"/></a>
+                   <div class="menubar">
+                    
+                       <p:menubar style="border:0px;border-radius:8px;background-color:#d6d6d6;  height:20px; margin-top: 0; ">
+                          <p:submenu label="menu"  style="font-size: 14px; background-color:#d6d6d6; font-family:Times New Roman;  border: 0px; font-weight:bold; margin-top: 0; " >
+                            <p:menuitem value="Home" url="index.xhtml"/>
+                            <p:separator/>
+                            <p:menuitem value="Blog" url="blog.xhtml"/>
+                             <p:separator/>
+                            <p:menuitem value="Contact" url="about.xhtml"/>
+                             <p:separator/>
+                            <p:menuitem value="About" url="about.xhtml"/>
+                             <p:separator/>
+                            <p:menuitem value="Ask" url="#main"/>
+                        </p:submenu>
+                 </p:menubar>
+                      
+                  </div>
+                  </div>
+                 <ul class="main-nav" id="js-menu">
+                    
+                     <li><a href="index.xhtml" class="nav-links">Home</a></li>
+                     <li><a href="blog.xhtml" class="nav-links">Blog</a></li>
+                     <li><a href="client.xhtml" class="nav-links">Contact</a></li>
+                     <li><a href="mainn.xhtml" class="nav-links"> About </a></li>
+                 </ul>
+                 
+              </nav>
+              <div class="clear"></div>
+             </div>
+             </div>
+              
+         
+             
+      
+        <div id="container">
+            
+      
+        <div id="side">
+            <div id="ss">
+                
+            <br/>
+            <br/>
+               
+                <p style="font-size: 15px; font-family: Comic Sans MS;"><b>Top 10 Nutrition/Dietetic Experts Base on Questions</b></p>
+                  <h:graphicImage url="/resources/images/TopD.png" id="loga"/>
+                 
+            </div>
+             </div>
+       
+         <h:form >
+            
+              
+              <div id="main">
+                  <div id="mcontent">
+                      <p  style="font-size: 15px; font-family: Comic Sans MS;"><b>Ask a Clinical Nutritionist</b></p>
+                 
+            <p>
+                <p style="font-size: 12px; font-family: Comic Sans MS; text-justify:distribute">My name is <b>Olayemi Michael</b> a Clinical Nutritionist and I have other clinical nutritionists working together.
+                We can help you to achieve healthy lifestyle through personalize nutrition.Use the Box below to ask your questions.You will get our response via your email in the next 48 hours
+                Nutrition : the foundation to healthy lifestyle </p>
+                
+              
+                <label>Name (First Last):</label>
+                <br/>
+                <input type="text" jsf:id="name" name="full_name" 
+                       placeholder="John Doe" value="#{askD.name}" 
+                       required="required" title="Enter your name."/>
+            </p>
+            <p>
+                <label>Email:</label>
+                <br/>
+                <input type="email" jsf:id="email" name="email" 
+                       value="#{askD.emailadd}" required="required"
+                       title="Enter email."/>
+            </p>
+           
+
+            <p>
+                <label>Enter Question :</label>
+                <br/>
+                <h:inputTextarea  cols="75" rows="6"
+                       value="#{askD.question}" required="required"
+                       title="Enter your question"/>
+            </p>
+                  Result : 
+                  <h:outputText value="#{askD.re}" id="muy"/><br/>
+                   <h:commandButton value="Send Question" actionListener="#{askD.sendmail}" action="index" >
+                       <f:ajax render="muy" execute="@form" />
+                     
+                   </h:commandButton><br/>
+                  <h:commandButton value="Clear" action="index" >
+                        <f:ajax render="@all" listener="#{askD.clear}"/>
+                     
+                   </h:commandButton>
+                  </div>
+              </div>
+            
+           
+
+           
+ 
+            
+        </h:form>
+            <div id="righside"> 
+                <div id="rg">
+                    <div class="rgi">
+                        <p style="font-family: Comic Sans MS; font-size: 16px;"><b>Expert Column</b></p>
+                <p style="font-family: Comic Sans MS">
+                    Are you a clinical nutritionist or registered dietitian nutritionist?
+                    Then why not answer  our critical thinking question
+                    An attempt could get you listed on our top experts of the month
+                   Being a top experts could make you a celebrity nutritionist/dietitian 
+                </p>
+                  <p style="font-family: Time New Romans; font-size: 16px; font-weight:bolder; color: red"><b>Critical Thinking Question</b></p>
+                <p style="font-family:Time New Romans; color:green;">
+                   Ying loves to eat hamburgers, fries, and
+                   lots of pizza with double amounts of
+                   cheese. He rarely eats any vegetables
+                   and fruits but, instead, snacks on cookies
+                   and ice cream. He insists that he has no
+                   problems with his health, is rarely ill, and
+                   doesn’t see how his diet could cause him
+                   any health risks. How would you explain to
+                   Ying that, despite his current good health,
+                   his diet could predispose him to future
+                   health problems?
+                </p>       
+               
+                <h:form>
+                   <p>
+              
+                <label>Name (First Last):</label>
+                <br/>
+                <input type="text" jsf:id="name" name="full_name" 
+                       placeholder="John Dave" value="#{ansD.namex}"
+                       required="required" title="Enter your name."/>
+            </p>  
+                    <p>
+                        <label>Profession</label><br/>
+                        <h:selectOneMenu value="#{ansD.prof}" required="required" class="selp" >
+                            <f:selectItem class="selp" itemValue="Dietitian" itemLabel="            " />
+                            <f:selectItem class="selp" itemValue="Dietitian" itemLabel="Registered Dietitian Nutritionist"/>
+                            <f:selectItem class="selp" itemValue="Nutritionist" itemLabel="Clinical Nutritionist" />
+                            <f:selectItem class="selp" itemValue="Nutritionist Holistic" itemLabel="Holistic Nutritionist" />
+                            <f:selectItem class="selp" itemValue="Nutritionist Lecturer " itemLabel="Nutrition  Academician" />
+                        </h:selectOneMenu>
+                    </p>
+                     <p>
+                <label>Email:</label>
+                <br/>
+                <input type="email" jsf:id="email" name="email" 
+                       required="required" value="#{ansD.emailaddx}"
+                       title="Enter email."/>
+            </p>
+                    <p>
+                <label>Your Response:</label>
+                <br/>
+               <h:inputTextarea  cols="75" rows="6"
+                                 required="required" value="#{ansD.response}"
+                       title="Enter your question"/>
+                
+            </p>
+                     Result : 
+                     <h:outputText value="#{ansD.rex}" id="moy"/><br/>
+                     <h:commandButton value="Send Response" actionListener="#{ansD.sendmailx}" action="index">
+                       <f:ajax render="moy" execute="@form" />
+                     
+                   </h:commandButton><br/>
+                    <h:commandButton value="Clear" action="index" >
+                        <f:ajax render="@all" listener="#{askD.clear}"/>
+                     
+                   </h:commandButton>
+                </h:form>
+                </div>
+                </div>
+            </div>
+            
+        
+         </div>
+        <div id="container2">
+        <div id="footer">
+            <div id="footc">
+            <div id="foo">
+                <ul class="foot">
+                     
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    
+                 </ul>
+                
+            </div>
+          
+                
+        </div>
+        </div>
+             <div id="contactf">
+            <div id="contact">
+                <div class="contm">
+                    <p style="font-size: 15px;"><b>Contacts</b></p>
+                    <p:separator/>
+                    <p style="font-size: 12px; font-family: Time New Romans;">Email:askacnutri@gmail.com</p>
+                    <p style="font-size: 12px; font-family: Time New Romans;"> Address:Abeokuta, Ogun State Nigeria</p>
+                <p style="font-size: 12px; font-family: Time New Romans;"> Telephone: +2348103428139</p>
+                </div>
+            </div>
+          
+          </div>
+             <div id="cop">
+               <div class="reso">
+                   <p style="font-size: 15px;"><b>Resources</b> </p>
+                   <p:separator/>
+                   <p style="font-size: 12px; font-family: Time New Romans;"  ><a href="about.xhtml" class="ree" style="text-decoration: none; color: black;">Our Team</a></p>
+                   <p style="font-size: 12px; font-family: Time New Romans;" ><a href="about.xhtml" class="ree" style="text-decoration: none; color: black;">Privacy Policy</a></p>
+                   <p style="font-size: 12px; font-family: Time New Romans;" ><a href="about.xhtml" class="ree" style="text-decoration: none; color: black;">Terms of Service</a></p>   
+                </div>
+           </div>
+             <div id="abo">
+               <div class="abouti">
+                   <p style="font-size: 15px;"><b>About</b> </p>
+                   <p:separator/>
+                   <a href="index.xhtml"><h:graphicImage url="/resources/images/bloglogo.png" id="lo"/></a>
+                   <p style="font-size: 12px; font-family: Time New Romans;"  >NutriSoft is a web application that connect client and clinical nutritionist/dietitian together. Ask your nutrition related questions and get response from experts</p>   
+                </div>
+           </div>
+        </div>
+       
+           
+            
+            <div id="copy">
+                    <p> Copyright 2020, Designed by Olayemi Michael </p>
+                </div>
+        
+        
+    </h:body>
+</html>
